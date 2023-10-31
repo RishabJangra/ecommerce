@@ -1,3 +1,8 @@
+#login details :----
+[user: rishab]
+[password: rishab]
+
+
 # Ecommerce
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.1.
