@@ -18,7 +18,8 @@ import { FooterComponent } from './footer/footer.component';
 import { AddcmpComponent } from './addcmp/addcmp.component';
 import {HttpClientModule} from '@angular/common/http';
 import { ForgotComponent } from './forgot/forgot.component';
-import { RegisterComponent } from './register/register.component'
+import { RegisterComponent } from './register/register.component';
+import { FinalComponent } from './final/final.component'
 
 
 const routes: Routes = [
@@ -44,7 +45,8 @@ const routes: Routes = [
     FooterComponent,
     AddcmpComponent,
     ForgotComponent,
-    RegisterComponent
+    RegisterComponent,
+    FinalComponent
   ],
   imports: [
     FormsModule,

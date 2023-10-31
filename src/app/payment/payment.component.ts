@@ -8,6 +8,18 @@ import { Router } from '@angular/router';
   styleUrls: ['./payment.component.css']
 })
 export class PaymentComponent{
+
+  name: string = '';
+  phone: string = '';
+  card: string = '';
+  valid: string = '';
+  cvv: string = '';
+
+  isFormValid: boolean = false;
+
+  updateButtonState() {
+    this.isFormValid = !!this.name && !!this.phone && !!this.card && !!this.valid && !!this.cvv;
+  }
   timerValue: number = 30;
   timerInterval: any;
   constructor(private router:Router){}

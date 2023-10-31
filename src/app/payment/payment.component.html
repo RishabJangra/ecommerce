@@ -4,6 +4,7 @@
         <h4>Logging Out in: {{ timerValue }} secs</h4>
       </div>
     <div class="box">
+
         <h2>
             Payment
         </h2>
@@ -14,7 +15,7 @@
             <!-- <img class="icon" src="../../assets/apple.jpg"> -->
             <img class="icon" src="../../assets/rupay.jpg">
         </div>
-        <div class="form">
+        <!-- <div class="form">
         <label class="label" for="name">Name on card</label>
         <input id="name"><br>
         <label class="label" for="phone">Phone Number</label>
@@ -26,7 +27,24 @@
         <label class="label" for="cvv">CVV</label>
         <input id="cvv"><br>
 
-        <button class="btn btn-dark mt-4">Done</button>
-        </div>
+        <button class="btn btn-dark mt-4" [routerLink]="('/final')">Done</button>
+        </div> -->
+
+        <div class="form">
+            <label class="label" for="name">Name on card</label>
+            <input id="name" [(ngModel)]="name" (input)="updateButtonState()"><br>
+            <label class="label" for="phone">Phone Number</label>
+            <input id="phone" [(ngModel)]="phone" (input)="updateButtonState()"><br>
+            <label class="label" for="card">Enter Card Number</label>
+            <input id="card" [(ngModel)]="card" (input)="updateButtonState()"><br>
+            <label class="label" for="valid">Validity Date</label>
+            <input id="valid" [(ngModel)]="valid" (input)="updateButtonState()"><br>
+            <label class="label" for="cvv">CVV</label>
+            <input id="cvv" [(ngModel)]="cvv" (input)="updateButtonState()"><br>
+          
+            <button class="btn btn-dark mt-4" [routerLink]="('/final')" [disabled]="!isFormValid">Done</button>
+          </div>
+          
+
     </div>
 </div>
