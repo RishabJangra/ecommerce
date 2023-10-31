@@ -1,0 +1,14 @@
+.login-image {
+    background: url('../../assets/rj.jpg') no-repeat center center;
+    background-size: cover;
+    min-height: 100vh;
+  }
+
+  .login-form {
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+  }

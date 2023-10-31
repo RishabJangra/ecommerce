@@ -1,0 +1,59 @@
+<app-navbar></app-navbar>
+<div class="container mt-5">
+    <div class="row bg-body-secondary mt-5">
+      <div class="col-md-6 mt-5 custom-card">
+        <h1>Welcome to Our E-Commerce Store</h1>
+        <p>Discover a wide range of products at great prices. Start shopping today!</p>
+        <a href="/product" class="btn btn-dark">Shop Now</a>
+      </div>
+      <div class="col-md-6 p-4 custom-card">
+        <img src="../../assets/rj.jpg" alt="Product Image" class="img-fluid rounded">
+      </div>
+    </div>  
+    <div class="row mt-5 bg-body-secondary mb-4">
+      <div class="col-md-4 p-4 custom-card">
+        <div class="card">
+          <img src="../../assets/electronics.jpg" alt="Electronics" class="card-img-top">
+          <div class="card-body">
+            <h5 class="card-title">Electronics</h5>
+            <p class="card-text">This section contains electronics items such as mobiles, laptops, chargers</p>
+            <a [routerLink]="['/product']" class="btn btn-dark">View More</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 p-4 custom-card">
+        <div class="card">
+          <img src="../../assets/gym.jpg" alt="Gym Accessories" class="card-img-top">
+          <div class="card-body">
+            <h5 class="card-title">Gym Accessories</h5>
+            <p class="card-text">This section contains gym accessories like wrist straps, dumbells, barbells etc.</p>
+            <a [routerLink]="['/product']" class="btn btn-dark">View More</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 p-4 custom-card">
+        <div class="card">
+          <img src="../../assets/clothes.jpg" alt="Clothes" class="card-img-top">
+          <div class="card-body">
+            <h5 class="card-title">Clothes</h5>
+            <p class="card-text">In clothes section you will get clothes for every child, adult and old people.</p>
+            <a [routerLink]="['/product']" class="btn btn-dark">View More </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+  <!-- <div>
+    <input [(ngModel)]="userName" placeholder="enter username">
+    <button (click)="submitText()">Submit</button>
+  </div> -->
+
+  <!-- <div>
+   <input [(ngModel)]="userName" placeholder="Enter User Name">
+   <button (click)="submitText()"> Submit </button>
+  </div>
+  <nav>
+    <a routerLink="/product"> product </a>
+  </nav> -->

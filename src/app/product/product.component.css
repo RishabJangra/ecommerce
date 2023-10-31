@@ -1,0 +1,49 @@
+/* .custom-card {
+    max-height: 100px;
+    overflow: hidden; 
+} */
+/* .carousel {
+    max-width: 700px;
+    max-height: 300px;
+} */
+
+.carouselclass {
+    height: 55vh;
+    display: flex;
+    justify-content: center;
+    background-color: rgb(244, 244, 244);
+    margin: auto;
+}
+
+.cardImg{
+    max-height: 350px;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+}
+
+/* .cbody{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+} */
+
+.custom-card{
+    max-width: 800px;
+    transition: transform 0.2s;
+}
+.custom-card:hover {
+    transform: scale(1.03); /* Increase the scale on hover */
+  }
+  .btn-dark {
+    background-color: #343a40; /* Default button background color */
+    color: #fff; /* Default text color */
+  
+    transition: background-color 0.2s, color 0.2s;
+  }
+  
+  .btn-dark:hover {
+    background-color: #292d31; /* New background color on hover */
+  }

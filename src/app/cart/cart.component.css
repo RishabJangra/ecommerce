@@ -1,0 +1,7 @@
+/* Add any other styles to your page */
+.vertical-line {
+    border-left: 1px solid black; /* Adjust color and width as needed */
+    height: 70vh;
+    position: fixed;
+    top: 0;
+}

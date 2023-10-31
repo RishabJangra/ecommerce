@@ -1,0 +1,136 @@
+<app-navbar></app-navbar>
+<h2 class="p-4 text-center">Prime Membership Subscription</h2>
+<div class="container mt-3 bg-body-secondary p-4 mb-5">
+  <!-- <h2 class="p-4 text-center">Prime Membership Subscription</h2> -->
+  <form #subscriptionForm="ngForm">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="firstName">First Name</label>
+          <input type="text" class="form-control border-dark" id="firstName" name="firstName" [(ngModel)]="firstName">
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="lastName">Last Name</label>
+          <input type="text" class="form-control border-dark" id="lastName" name="lastName" [(ngModel)]="lastName">
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group p-2">
+      <label>Choose Subscription Duration:</label>
+      <div class="form-check">
+        <input class="form-check-input border-dark" type="radio" id="1month" name="subscription1Month" (change)="updateSelectedOptions('1 Month', $event)">
+        <label class="form-check-label" for="1month">1 Month</label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input border-dark" type="radio" id="2month" name="subscription2Months" (change)="updateSelectedOptions('2 Months', $event)">
+        <label class="form-check-label" for="2month">2 Months</label>
+      </div>
+    </div>
+
+    <div class="form-group p-2">
+      <label for="membershipType">Choose Membership Type:</label>
+      <select class="form-control border-dark" id="membershipType" name="membershipType" [(ngModel)]="selectedMembershipType">
+        <option value="basic">Basic</option>
+        <option value="premium">Premium</option>
+        <option value="gold">Gold</option>
+      </select>
+    </div>
+
+    <div class="form-group p-2">
+      <label>Additional Features:</label>
+      <div class="form-check">
+        <input class="form-check-input border-dark" type="checkbox" id="feature1" name="feature1" (change)="updateSelectedOptions('Free delivery', $event)">
+        <label class="form-check-label" for="feature1">Free delivery all over India for 299Rs</label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input border-dark" type="checkbox" id="feature2" name="feature2" (change)="updateSelectedOptions('Early access to sale', $event)">
+        <label class="form-check-label" for="feature2">Access to every sale early for 99Rs</label>
+      </div>
+    </div>
+    <div class="row p-2">
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="creditNo">Credit Card Number</label>
+          <input type="text" class="form-control border-dark" id="creditNo" name="creditNo" [(ngModel)]="creditNo" placeholder=" ">
+        </div>
+      </div>
+    </div>  
+    <div class="p-3">
+    <button type="submit" class="btn btn-dark mt-3" (click)="submitText()">Subscribe</button>
+  </div>
+  </form>
+
+  <div>
+    <ul>
+      <li *ngFor="let item of data"> {{item[1].email}}</li> 
+    </ul>
+  </div>
+  <!-- <div class="alert alert-success mt-3" role="alert" *ngIf="subscriptionSuccess">
+    Congrats, {{ firstName }}! Your {{ subscriptionDuration }} membership is active.
+    <br>
+    Details:
+    <ul>
+      <li *ngFor="let feature of selectedFeatures">{{ selectedFeatures }}</li>
+    </ul>
+  </div> -->
+</div>
+
+<!-- <div>
+  <h2>Email List</h2>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>ID</th>            
+        <th>Email</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Avatar</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of data">
+        <td>{{ item.id }}</td>
+        <td>{{ item.email }}</td>
+        <td>{{ item.first_name }}</td>
+        <td>{{ item.last_name }}</td>
+        <td><img [src]="item.avatar" alt="Avatar" width="50" height="50" /></td>
+      </tr>
+    </tbody>
+  </table>
+</div> -->
+<h2> Users who already subscribed</h2>
+<table class="table table-bordered table-striped">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Email</th>
+      <th>Avatar</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let user of paginatedList">
+      <td>{{user.id}}</td>
+      <td>{{user.first_name}}</td>
+      <td>{{user.last_name}}</td>
+      <td>{{user.email}}</td>
+      <td>
+        <img [src]="user.avatar" class="img-thumbnail" style="max-width: 70px; max-height: 70px;">
+      </td>
+    </tr>
+  </tbody>
+</table>
+<div class="page-controls">
+
+  <button (click)="prevPage()" [disabled]="currentPage === 1">Previous</button>
+
+  <span>Page {{ currentPage }} of {{ totalPages }}</span>
+
+  <button (click)="nextPage()" [disabled]="currentPage === totalPages">Next</button>
+
+</div>
+

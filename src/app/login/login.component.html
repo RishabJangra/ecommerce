@@ -1,0 +1,32 @@
+<div class="container-fluid">
+    <div class="row">
+      <div class="col-md-6 d-none d-md-block login-image">
+        <img src="../../assets/icon.jpg" alt="Login Image" class="img-fluid">
+      </div>
+      <div class="col-md-6 login-form">
+        <h2 class="text-center">Login</h2>
+        <form>
+          <div class="mb-3">
+            <label for="username" class="form-label">Username</label>
+            <input [(ngModel)]="user" type="text" class="form-control" id="username" name="username" placeholder="Enter your username">
+          </div>
+          <div class="mb-3">
+            <label for="password" class="form-label">Password</label>
+            <input [(ngModel)]="password" type="password" class="form-control" id="password" name="password" placeholder="Enter your password">
+          </div>
+          <div class="text-center">
+            <button [disabled]="!user || !password" type="submit" class="btn btn-dark" (click)="showSuccess()">Login</button>
+          </div>
+          <div class="text-center mt-4">
+            <a [routerLink]="['/register']" class="link-body-emphasis">Register New User</a>
+          </div>
+          <div class="text-center mt-2">
+            <a [routerLink]="['/forgot']" class="link-body-emphasis">Forgot Password</a>
+          </div>
+          <!-- <div *ngIf="showSuccessMessage === false" class="text-center text-danger mt-2">
+            Invalid username or password.
+          </div> -->
+        </form>
+      </div>
+    </div>
+  </div>

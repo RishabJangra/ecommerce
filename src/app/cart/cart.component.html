@@ -1,0 +1,41 @@
+<app-navbar></app-navbar>
+
+<div class="container mt-3">
+  <img src="../../assets/cart.jpg" class="mx-auto d-block">
+  <h2 class="text-center p-2">Your Cart</h2>
+  <div class="row">
+    <div class="col-md-8">
+      
+
+      <div class="row">
+        <div class="col-md-4" *ngFor="let item of cartItems">
+          <div class="card custom-card mb-4">
+            <div class="card-img-box p-4 bg-body-secondary">
+              <img [src]="item.imageUrl" class="card-img-top border p-3 bg-body-tertiary" alt="{{ item.name }}">
+            </div>
+            <div class="card-body bg-body-secondary">
+              <h5 class="card-title">{{ item.name }}</h5>
+              <p class="card-text">Price: {{ item.price }} Rs</p>
+              <button class="btn btn-dark" (click)="removeItemFromCart(item.id)">Remove from Cart</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4 border border-dark bg-body-secondary">      
+      <div class="card custom-card mb-4 mt-5">
+        <img src="../../assets/rj.jpg" class="card-img-top" alt="Payment Image">
+        <div class="card-body bg-body-secondary">
+          <h5 class="card-title">Payment Details</h5>
+        
+          <p class="card-text">Total Payable: {{ calculateTotal() }} Rs</p>
+          
+          <button class="btn btn-success btn-block" (click)="proceedToCheckout()">Proceed to Checkout</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+

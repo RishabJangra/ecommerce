@@ -1,0 +1,35 @@
+<div class="container-fluid">
+    <div class="row">
+      <div class="col-md-6 d-none d-md-block login-image">
+        <!-- <img src="../../assets/forgot-password-icon.jpg" alt="Forgot Password Image" class="img-fluid"> -->
+      </div>
+      <div class="col-md-6 login-form">
+        <h2 class="text-center">Forgot Password</h2>
+        <form (ngSubmit)="resetPassword()" #forgotPasswordForm="ngForm">
+          <div class="mb-3">
+            <label for="email" class="form-label">Email</label>
+            <input
+              type="email"
+              class="form-control"
+              id="email"
+              name="email"
+              required
+              [(ngModel)]="user.email"
+              #email="ngModel"
+              placeholder="Enter your email"
+            />
+          </div>
+          <div class="text-center">
+            <button
+              type="submit"
+              class="btn btn-dark"
+              [disabled]="forgotPasswordForm.invalid"
+            >
+              Reset Password
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  

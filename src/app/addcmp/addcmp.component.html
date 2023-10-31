@@ -1,0 +1,19 @@
+<app-navbar></app-navbar>
+<div class="container">
+    <div class="box">
+        <h2>
+            Add Product
+        </h2>
+        <div class="form">
+        <label class="label" for="name" >Name of Product</label>
+        <input id="name" [(ngModel)]="pr_name"><br>
+        <label class="label" for="desc">Description</label>
+        <input id="desc" [(ngModel)]="pr_desc"><br>      
+        <label class="label" for="price">Price</label>
+        <input id="price" [(ngModel)]="pr_price"><br>
+
+        <button class="btn btn-dark mt-4" (click)="onAdd()">Add</button>
+        <button class="btn btn-dark mt-4 finish" (click)="onFinish()">Finish</button>
+        </div>
+    </div>
+</div>

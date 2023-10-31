@@ -1,0 +1,51 @@
+.container{
+    min-height: 84.5vh;
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+}
+
+.box{
+    border: 2px solid #a3a3a3;
+    background-color: #ced4da;
+    border-radius: 5%;
+    padding: 20px;
+    min-width: 60vh;
+    min-height: 50vh;
+    /* justify-content: center; */
+    /* align-items: center;
+    flex-direction: column;
+    display: flex; */
+}
+
+.form{
+    padding: 5px;
+    color: black;
+    margin-top: 10px;
+}
+
+h2{
+    align-items: center;
+    flex-direction: column;
+    display: flex;
+    padding: 10px;
+    background-color: black;
+    color: white;
+    /* border-radius: 5%;
+    max-width: 50vh; */
+}
+
+.label{
+    padding: 7px;
+}
+
+input{
+    float: right;
+    margin-right: 7px;
+}
+
+.finish{
+    float: right;
+}

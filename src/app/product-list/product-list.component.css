@@ -1,0 +1,11 @@
+.container{
+    min-height: 86vh;
+}
+
+.custom-card{
+    max-width: 800px;
+    transition: transform 0.2s;
+}
+.custom-card:hover {
+    transform: scale(1.03); /* Increase the scale on hover */
+  }
