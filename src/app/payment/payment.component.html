@@ -40,7 +40,7 @@
             <label class="label" for="valid">Validity Date</label>
             <input id="valid" [(ngModel)]="valid" (input)="updateButtonState()"><br>
             <label class="label" for="cvv">CVV</label>
-            <input id="cvv" [(ngModel)]="cvv" (input)="updateButtonState()"><br>
+            <input id="cvv" type="password" [(ngModel)]="cvv" (input)="updateButtonState()"><br>
           
             <button class="btn btn-dark mt-4" [routerLink]="('/final')" [disabled]="!isFormValid">Done</button>
           </div>
