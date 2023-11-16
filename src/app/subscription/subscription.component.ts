@@ -84,6 +84,6 @@ export class SubscriptionComponent {
     this.productData.selectedOptions = this.selectedOptions;
     this.productData.lastName=this.lastName;
    
-    
+    this.router.navigate(['/success'])
   }
   }

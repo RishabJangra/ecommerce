@@ -12,7 +12,7 @@ export class AuthService {
 
   login(username: string, password: string): Observable<any> {
     const url = `${this.baseUrl}/login`;
-    const body = { username, password }; // Request body containing username and password
+    const body = { username, password };
     return this.http.post<any>(url, body);
   }
 }

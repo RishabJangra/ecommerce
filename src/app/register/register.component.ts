@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { ProductService } from '../product.service';
 import { RegistrationService } from '../registration-service.service';
 import { HttpErrorResponse } from '@angular/common/http';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-register',
@@ -26,10 +27,19 @@ export class RegisterComponent {
   email: string = '';
   agreeTerms: boolean = false;
   registrationMessage: string = '';
+  registrationForm: FormGroup;
 
-  constructor(private registrationService :RegistrationService) {}
+  constructor(private registrationService :RegistrationService,
+    private fb: FormBuilder,) {
+      this.registrationForm = this.fb.group({
+        username: ['', Validators.required],
+        email: ['', [Validators.required, Validators.email]],
+        password: ['', Validators.required],
+      });
+    }
 
   registerUser() {
+    
     this.registrationService.registerUser(this.username, this.password, this.email)
       .subscribe(
         (response: any) => {

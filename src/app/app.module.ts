@@ -10,7 +10,7 @@ import { CartComponent } from './cart/cart.component';
 import { PaymentComponent } from './payment/payment.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { SubscriptionComponent } from './subscription/subscription.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
 import { SuccessComponent } from './success/success.component';
 import { LoginComponent } from './login/login.component';
@@ -54,6 +54,7 @@ const routes: Routes = [
     AppRoutingModule,
     RouterModule.forRoot(routes),
     HttpClientModule,
+    ReactiveFormsModule
   ],
   exports:[
   RouterModule,
