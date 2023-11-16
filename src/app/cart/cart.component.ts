@@ -22,7 +22,7 @@ export class CartComponent implements OnInit {
       this.cartItems = items;
     });
   
-    this.isLoggedIn = !!this.productService.user;
+    this.isLoggedIn = !!this.productService.username;
   
   }
   calculateTotal(): number {

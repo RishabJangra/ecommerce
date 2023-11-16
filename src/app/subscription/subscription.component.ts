@@ -51,25 +51,7 @@ export class SubscriptionComponent {
   //   // });
   // }
 
-  ngOnInit(): void {
-    this.productData.getUsers().subscribe(
-      (data) => {
-        //approch 1
-        const value = Object.values(data);
-        console.log(data)
-        console.log(value)
-        console.log("value", value);
-        const users = value[4];
-        this.users = users
-        console.log("users", users)
-        //approach 2
-        this.list = Object.keys(data['data']).map(key => data['data'][key]);
-        console.log("Users2 Approach 2 ",this.list);
-      }
-
-    )
-
-  }
+ 
 
  
 
@@ -102,24 +84,6 @@ export class SubscriptionComponent {
     this.productData.selectedOptions = this.selectedOptions;
     this.productData.lastName=this.lastName;
    
-    const formData = new FormData();
-    formData.append('name', this.firstName); 
-    formData.append('lastname', this.lastName); 
-
-    this.productData.register(formData).subscribe(
-      (response) => {
-        console.log('POST request successful', response);
-        console.log('First Name:', this.firstName);
-        console.log('Last Name:', this.lastName);
-        console.log('Credit Card Number:', this.creditNo);
-        console.log('Selected Membership Type:', this.selectedMembershipType);
-        console.log('Selected Options:', this.selectedOptions);
-        this.router.navigate(['/success']);
-      },
-      (error) => {
-        console.error('POST request error', error);
-      }
-      
-    );
+    
   }
   }

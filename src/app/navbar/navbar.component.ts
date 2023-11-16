@@ -16,7 +16,7 @@ export class NavbarComponent {
     private productService: ProductService) {}
     
   ngOnInit() {
-    this.isLoggedIn = !!this.productService.user;
+    this.isLoggedIn = !!this.productService.username;
   }
   
   logout() {

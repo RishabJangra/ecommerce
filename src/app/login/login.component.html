@@ -8,14 +8,14 @@
         <form>
           <div class="mb-3">
             <label for="username" class="form-label">Username</label>
-            <input [(ngModel)]="user" type="text" class="form-control" id="username" name="username" placeholder="Enter your username">
+            <input [(ngModel)]="username" type="text" class="form-control" id="username" name="username" placeholder="Enter your username">
           </div>
           <div class="mb-3">
             <label for="password" class="form-label">Password</label>
             <input [(ngModel)]="password" type="password" class="form-control" id="password" name="password" placeholder="Enter your password">
           </div>
           <div class="text-center">
-            <button [disabled]="!user || !password" type="submit" class="btn btn-dark" (click)="showSuccess()">Login</button>
+            <button [disabled]="!username || !password" type="submit" class="btn btn-dark" (click)="showSuccess()">Login</button>
           </div>
           <div class="text-center mt-4">
             <a [routerLink]="['/register']" class="link-body-emphasis">Register New User</a>
