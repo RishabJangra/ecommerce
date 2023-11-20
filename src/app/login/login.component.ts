@@ -31,7 +31,8 @@ export class LoginComponent {
       next: (response) => {
         console.log('Response:', response);
         // Check the response from the server
-        if (response.message) {
+        if (response.message == 'Login successful') {
+          console.log(response.message)
           console.log("Success")
           //alert('Login successful');
           this.authService.isAuthenticated = true;
