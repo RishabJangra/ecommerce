@@ -41,18 +41,37 @@ app.post("/register", (req, res) => {
     }
   });
 });
-app.post("/login", (req, res) => {
+// app.post("/login", (req, res) => {
+//   const { username, password } = req.body;
+//   const sql = "SELECT * FROM registration WHERE username = ? AND password = ?";
+//   db.query(sql, [username, password], (err, results) => {
+//     if (err) {
+//       console.log("Database error: " + err);
+//       res.status(500).send("Error verifying login");
+//     } else {
+//       if (results.length > 0) {
+//         res.status(200).json({ message: 'Login successful' });
+//       } else {
+//         res.status(401).send("Invalid credentials");
+//       }
+//     }
+//   });
+// });
+
+app.post('/login', (req, res) => {
   const { username, password } = req.body;
-  const sql = "SELECT * FROM registration WHERE username = ? AND password = ?";
-  db.query(sql, [username, password], (err, results) => {
+  console.log("Login attempt for user: " + username);
+ 
+  const sql = 'SELECT * FROM registration WHERE username = ? AND password = ?';
+  db.query(sql, [username, password], (err, result) => {
     if (err) {
       console.log("Database error: " + err);
-      res.status(500).send("Error verifying login");
+      res.status(500).json({ success: false, message: "Error during login" });
     } else {
-      if (results.length > 0) {
-        res.status(200).json({ message: 'Login successful' });
+      if (result.length > 0) {
+        res.status(200).json({ success: true, message: "Login successful" });
       } else {
-        res.status(401).send("Invalid credentials");
+        res.status(401).json({ success: false, message: "Invalid credentials" });
       }
     }
   });

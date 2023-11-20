@@ -10,6 +10,7 @@ import { AuthService } from '../auth.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
+  user = { username: '', password: '' };
   username: string = '';
   password: string = '';
 
@@ -22,17 +23,48 @@ export class LoginComponent {
     private router: Router,
     private productData: ProductService) { }
 
-  ngOnInit() { }
-  showSuccess() {
-    if (this.username==='rishab' && this.password==='rishab') {
-      this.showSuccessMessage = true;
-      this.productData.username = this.username;
-      this.productData.password=this.password;
-      this.router.navigate(['/home']);
-      console.log('done')
-    }
+  // ngOnInit() { }
+
+  showSuccess(): void {
+    const { username, password } = this.user;
+    this.authService.login(username, password).subscribe({
+      next: (response) => {
+        console.log('Response:', response);
+        // Check the response from the server
+        if (response.message) {
+          console.log("Success")
+          //alert('Login successful');
+          this.authService.isAuthenticated = true;
+          this.router.navigate(['/home']);
+          console.log(this.user+"Login Succesfull");
+        } else {
+          console.log("Error")
+          alert('Invalid credentials');
+         // console.log(this.user);
+        }
+      },
+      error: (error) => {
+        console.error('Login error:', error);
+      },
+    });
+  }
+
+
+
+
+
+  // showSuccess() {
+  //   if (this.username==='rishab' && this.password==='rishab') {
+  //     this.showSuccessMessage = true;
+  //     this.productData.username = this.username;
+  //     this.productData.password=this.password;
+  //     this.router.navigate(['/home']);
+  //     console.log('done')
+  //   }
 
  
+
+
   // showSuccess() {
   //   this.authService.login(this.username, this.password).subscribe(
   //     (response) => {
@@ -51,5 +83,4 @@ export class LoginComponent {
   //     }
   //   );
   // }
-}
 }

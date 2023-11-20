@@ -50,10 +50,16 @@ export class ProductService {
 
 
   login(username: string, password: string) {
-    if (username === 'rishab' && password === 'rishab') {
+    //if (username === 'rishab' && password === 'rishab') {
       this.username = username;
-    }
+   // }
   }
+
+  // login(username: string, password: string) {
+  //   if (username === 'rishab' && password === 'rishab') {
+  //     this.username = username;
+  //   }
+  // }
 
   // login(username: string, password: string): Observable<any> {
   //   return this.http.post<any>(`${this.baseUrl}/login`, { username, password });

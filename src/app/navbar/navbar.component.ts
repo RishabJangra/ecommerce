@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { ProductService } from '../product.service';
 import { CartService } from '../cart.service';
 import { Router } from '@angular/router';
+import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'app-navbar',
@@ -13,10 +14,11 @@ export class NavbarComponent {
   
   constructor(private cartService: CartService,
     private router: Router,
-    private productService: ProductService) {}
+    private productService: ProductService,
+    private authService: AuthService) {}
     
   ngOnInit() {
-    this.isLoggedIn = !!this.productService.username;
+    this.isLoggedIn = !!this.authService.username;
   }
   
   logout() {

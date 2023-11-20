@@ -3,6 +3,7 @@ import { CartService } from '../cart.service';
 import { Product } from '../product/product.component';
 import { Router } from '@angular/router';
 import { ProductService } from '../product.service';
+import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'app-cart',
@@ -15,14 +16,15 @@ export class CartComponent implements OnInit {
 
   constructor(private cartService: CartService,
     private router: Router,
-    private productService: ProductService) {}
+    private productService: ProductService,
+    private authService: AuthService) {}
 
   ngOnInit() {
     this.cartService.cart$.subscribe((items) => {
       this.cartItems = items;
     });
   
-    this.isLoggedIn = !!this.productService.username;
+    this.isLoggedIn = !!this.authService.username;
   
   }
   calculateTotal(): number {
