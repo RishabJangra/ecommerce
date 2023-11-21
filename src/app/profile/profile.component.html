@@ -1,0 +1,16 @@
+<app-navbar></app-navbar>
+<div class="container mt-5">
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <div *ngIf="userProfile" class="card">
+          <h2 class="card-header">User Profile</h2>
+          <div class="card-body text-center">
+            <img src="../../assets/profile.jpg" alt="Profile Image" class="rounded-circle mb-3" width="150" height="150">
+            <p><strong>Username:</strong> {{ userProfile.userProfile.username | capitalise}}</p>
+            <p><strong>Email:</strong> {{ userProfile.userProfile.email }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

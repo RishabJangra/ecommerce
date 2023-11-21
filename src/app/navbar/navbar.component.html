@@ -37,8 +37,8 @@
           </li>          
         </ul>
         <form class="d-flex" role="search">
-          <input class="form-control me-2 text-secondary" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-secondary text-light" type="submit">Search</button>
+          <!-- <input class="form-control me-2 text-secondary" type="search" placeholder="Search" aria-label="Search"> -->
+          <button class="btn btn-outline-secondary text-light" *ngIf="isLoggedIn" type="submit" [routerLink]="['/profile']">Profile</button>
         </form>
       </div>
     </div>

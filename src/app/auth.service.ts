@@ -17,6 +17,7 @@ export class AuthService {
   //   return this.http.post<any>(url, body);
   // }
   private _isAuthenticated = false;
+  private backendUrl = 'http://localhost:3000';
   username: string='';
   constructor(private http: HttpClient, private router: Router) {}
  
@@ -38,5 +39,21 @@ export class AuthService {
  
   set isAuthenticated(value: boolean) {
     this._isAuthenticated = value;
+  }
+
+  getUserProfile(): Observable<any> {
+    // Use the stored username to fetch user profile
+    if (!this.username) {
+      return new Observable(); // Handle scenario where username is not available
+    }
+    return this.http.get<any>(`${this.backendUrl}/user/${this.username}`);
+  }
+
+  setUsername(username: string): void {
+    this.username = username;
+  }
+
+  clearUsername(): void {
+    this.username = '';
   }
 }

@@ -77,6 +77,23 @@ app.post('/login', (req, res) => {
   });
 });
 
+app.get('/user/:username', (req, res) => {
+  const username = req.params.username;
+  const sql = 'SELECT * FROM registration WHERE username = ?';
+  db.query(sql, [username], (err, result) => {
+    if (err) {
+      console.log('Database error:', err);
+      res.status(500).json({ success: false, message: 'Error fetching user profile' });
+    } else {
+      if (result.length > 0) {
+        res.status(200).json({ success: true, userProfile: result[0] });
+      } else {
+        res.status(404).json({ success: false, message: 'User not found' });
+      }
+    }
+  });
+});
+
 
 
 // app.post("/register", (req, res) => {

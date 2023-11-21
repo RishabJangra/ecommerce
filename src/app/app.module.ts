@@ -19,7 +19,9 @@ import { AddcmpComponent } from './addcmp/addcmp.component';
 import {HttpClientModule} from '@angular/common/http';
 import { ForgotComponent } from './forgot/forgot.component';
 import { RegisterComponent } from './register/register.component';
-import { FinalComponent } from './final/final.component'
+import { FinalComponent } from './final/final.component';
+import { ProfileComponent } from './profile/profile.component';
+import { CapitalisePipe } from './pipes/capitalise.pipe'
 
 
 const routes: Routes = [
@@ -46,7 +48,9 @@ const routes: Routes = [
     AddcmpComponent,
     ForgotComponent,
     RegisterComponent,
-    FinalComponent
+    FinalComponent,
+    ProfileComponent,
+    CapitalisePipe
   ],
   imports: [
     FormsModule,

@@ -12,6 +12,7 @@ import { AddcmpComponent } from './addcmp/addcmp.component';
 import { ForgotComponent } from './forgot/forgot.component';
 import { RegisterComponent } from './register/register.component';
 import { FinalComponent } from './final/final.component';
+import { ProfileComponent } from './profile/profile.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -25,6 +26,7 @@ const routes: Routes = [
   { path: 'addcmp', component:AddcmpComponent},
   { path: 'home', component:HomeComponent},
   { path: 'forgot', component:ForgotComponent},
+  { path: 'profile', component:ProfileComponent},
   { path: 'register', component:RegisterComponent},
   { path: 'final', component:FinalComponent},
   { path:'home', loadChildren:()=>import ('./home/home.module').then(data => data.HomeModule)},
