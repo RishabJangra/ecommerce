@@ -21,7 +21,12 @@ import { ForgotComponent } from './forgot/forgot.component';
 import { RegisterComponent } from './register/register.component';
 import { FinalComponent } from './final/final.component';
 import { ProfileComponent } from './profile/profile.component';
-import { CapitalisePipe } from './pipes/capitalise.pipe'
+import { CapitalisePipe } from './pipes/capitalise.pipe';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatDialog, MatDialogModule } from '@angular/material/dialog';
+import { MatFormFieldModule } from '@angular/material/form-field';
+
+import { UpdateProfileComponent } from './update-profile/update-profile.component';
 
 
 const routes: Routes = [
@@ -50,7 +55,9 @@ const routes: Routes = [
     RegisterComponent,
     FinalComponent,
     ProfileComponent,
-    CapitalisePipe
+    CapitalisePipe,
+    UpdateProfileComponent,
+    
   ],
   imports: [
     FormsModule,
@@ -58,7 +65,11 @@ const routes: Routes = [
     AppRoutingModule,
     RouterModule.forRoot(routes),
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
+    MatFormFieldModule,
+    MatDialogModule
+    
   ],
   exports:[
   RouterModule,

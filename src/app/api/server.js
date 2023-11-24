@@ -94,34 +94,26 @@ app.get('/user/:username', (req, res) => {
   });
 });
 
-
-
-// app.post("/register", (req, res) => {
-//   const { username, password, email } = req.body;
-//   const sql = "INSERT INTO registration (username, password, email) VALUES (?, ?, ?)";
-//   db.query(sql, [username, password, email], (err, result) => {
-//     if (err) {
-//       console.log("Database error: " + err);
-//       res.status(500).send("Error registering user");
-//     } else {
-//       res.status(200).send("User registered successfully");
-//     }
-//   });
-// });
-
-// app.post('/register', async (req, res) => {
-//   try {
-//     const { username, password, email } = req.body;
-//     // Perform registration logic (e.g., save user to a database)
-//     // Replace this with your actual database interaction code
-//     // ...
-
-//     res.status(200).json({ message: 'User registered successfully' });
-//   } catch (error) {
-//     console.error('Registration error:', error);
-//     res.status(500).json({ error: 'Internal Server Error' });
-//   }
-// });
+app.delete('/users/:username', (req, res) => {
+  const username = req.params.username; // Retrieve the username from the request parameters
+  const sql = 'DELETE FROM registration WHERE username = ?';
+  console.log(username)
+  // Use the username to perform deletion in your database
+  // Replace this with your database logic to delete the user based on the username
+  db.query(sql, [username], (err, result) => {
+    if (err) {
+      console.error('Error deleting user:', err);
+      res.status(500).json({ success: false, message: 'Error deleting user' });
+    } else {
+      // Check if any rows were affected to determine if the user was deleted successfully
+      if (result.affectedRows > 0) {
+        res.status(200).json({ success: true, message: 'User deleted successfully' });
+      } else {
+        res.status(404).json({ success: false, message: 'User not found or already deleted' });
+      }
+    }
+  });
+});
 
 
 app.listen(port, () => {

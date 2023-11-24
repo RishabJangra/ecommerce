@@ -18,13 +18,15 @@ export class NavbarComponent {
     private authService: AuthService) {}
     
   ngOnInit() {
-    this.isLoggedIn = !!this.authService.username;
+    //this.isLoggedIn = !!this.authService.username;
+    this.isLoggedIn = this.authService.isLoggedIn;
   }
   
   logout() {
     // Clear user data and set isLoggedIn to false
-    this.productService.logout();
-    this.isLoggedIn = false;
+    //this.productService.logout();
+    this.authService.clearUsername;
+    this.isLoggedIn = this.authService.isLoggedIn;
     alert('Logged Out')
     // You can also navigate to the login page or any other page as needed
     this.router.navigate(['/home']);

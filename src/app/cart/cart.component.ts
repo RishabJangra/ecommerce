@@ -24,7 +24,8 @@ export class CartComponent implements OnInit {
       this.cartItems = items;
     });
   
-    this.isLoggedIn = !!this.authService.username;
+    //this.isLoggedIn = !!this.authService.username;
+    this.isLoggedIn = this.authService.isLoggedIn;
   
   }
   calculateTotal(): number {
